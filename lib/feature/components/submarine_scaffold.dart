@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:go_router/go_router.dart';
 import 'package:nil/nil.dart';
+import 'package:quizz/core/utils/constants/app_style.dart';
 import 'package:quizz/feature/components/bubbler.dart';
 import 'package:quizz/feature/components/content_box.dart';
 import 'package:quizz/feature/components/wave.dart';
@@ -65,14 +66,8 @@ class _SubmarineScaffoldState extends State<SubmarineScaffold>
         children: [
           Container(
             decoration: BoxDecoration(
-                gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: [
-                colorScheme.primaryContainer,
-                colorScheme.primary,
-              ],
-            )),
+              gradient: AppStyle.bgLinearGradient(context),
+            ),
           ),
           StreamBuilder<List<Bubble>>(
               stream: bubbleLogic.bubblesStream,

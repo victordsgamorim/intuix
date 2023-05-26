@@ -1,5 +1,4 @@
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quizz/core/route/route_path.dart';
 import 'package:quizz/core/theme/app_theme.dart';
@@ -9,6 +8,7 @@ import 'package:quizz/feature/presenter/common_libs.dart';
 import 'package:quizz/gen/assets.gen.dart';
 
 part 'package:quizz/feature/presenter/login/widgets/login_form.dart';
+
 part 'package:quizz/feature/presenter/login/widgets/login_sign_up_button.dart';
 
 class LoginPage extends StatefulWidget {
@@ -21,8 +21,6 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
-
-
     final size = MediaQuery.of(context).size;
     final percent = PlatformInfo.isMobileSize(context) ? .6 : .7;
     return SubmarineScaffold(
@@ -55,9 +53,6 @@ class _LoginPageState extends State<LoginPage> {
   void _goTo({
     required AnimationController controller,
     required String path,
-  }) {
-    controller.reverse().then((_) {
-      context.go(path);
-    });
-  }
+  }) =>
+      controller.reverse().then((_) => context.go(path));
 }

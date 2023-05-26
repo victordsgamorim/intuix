@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:quizz/core/route/route_path.dart';
+import 'package:quizz/feature/presenter/dashboard/dashboard_page.dart';
 import 'package:quizz/feature/presenter/forgot_password/forgot_password_page.dart';
-import 'package:quizz/feature/presenter/login/login_page.dart';
 import 'package:quizz/feature/presenter/register/register_page.dart';
 
 GoRouter router = GoRouter(
   routes: [
     GoRoute(
         path: RoutePath.init,
-        builder: (context, state) => const LoginPage(),
+        builder: (context, state) => const DashboardPage(),
         routes: [
           FadeTransitionGoRouter(
               path: RoutePath.register, child: const RegisterPage()),
